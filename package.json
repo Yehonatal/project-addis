@@ -21,7 +21,7 @@
         "songs",
         "crud"
     ],
-    "author": "",
+    "author": "yonatan afewerk",
     "license": "MIT",
     "devDependencies": {
         "concurrently": "^8.2.2"
