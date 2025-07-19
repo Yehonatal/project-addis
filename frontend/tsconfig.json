@@ -1,17 +1,27 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "esModuleInterop": true,
+        "target": "ES2020",
         "module": "ESNext",
         "moduleResolution": "Node",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "esModuleInterop": true,
         "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react-jsx"
+        "strict": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@componentStyles/*": ["src/components/styles/*"],
+            "@pages/*": ["src/pages/*"],
+            "@store/*": ["src/store/*"],
+            "@services/*": ["src/services/*"],
+            "@utils/*": ["src/utils/*"],
+            "@styles/*": ["src/styles/*"]
+        }
     },
-    "include": ["src"]
+    "include": ["webpack.config.ts", "src"],
+    "exclude": ["node_modules", "dist"]
 }

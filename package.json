@@ -24,6 +24,9 @@
     "author": "yonatan afewerk",
     "license": "MIT",
     "devDependencies": {
-        "concurrently": "^8.2.2"
+        "@types/dotenv-webpack": "^7.0.8",
+        "@types/webpack-dev-server": "^4.7.2",
+        "concurrently": "^8.2.2",
+        "dotenv-webpack": "^8.1.1"
     }
 }
