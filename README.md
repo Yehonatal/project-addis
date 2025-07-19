@@ -2,6 +2,16 @@
 
 This is a full-stack song management application built for Addis software plc as a test project. The application allows users to manage songs, including adding, editing, and deleting them. It also provides a search functionality to find specific songs.
 
+## Preface 
+I didn't have any experience with both tools (I have used redux before but only in a tutorial never used it after) This was a really good exp in challenging myself to pick up new tools in a very limited time. The following repo's are what I built to learn how to make the project for the test, I used youtube videos, GPT(and Gemini when gpt didn't cut it), and their respective documentations 
+- [Learning Redux toolkit and saga](https://github.com/Yehonatal/learn-redux-toolkit-and-saga)
+- [Learning Webpack](https://github.com/Yehonatal/learn-webpack)
+
+
+## Webpack config explanation and my reasoning    
+- [Document](frontend/webpack-doc.md) : Its in frontend/webpack-doc.md
+
+
 ## Tech Stack as Per Requirement
 
 ### Frontend
