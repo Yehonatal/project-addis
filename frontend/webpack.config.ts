@@ -1,8 +1,10 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import "webpack-dev-server";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const config = (env: any, argv: any) => {
     const isProduction = argv.mode === "production";
@@ -17,14 +19,10 @@ const config = (env: any, argv: any) => {
             publicPath: "/",
         },
         resolve: {
-            extensions: [".js", ".jsx", ".ts", ".tsx"],
+            extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
             alias: {
                 "@": path.resolve(__dirname, "src"),
                 "@components": path.resolve(__dirname, "src/components"),
-                "@componentStyles": path.resolve(
-                    __dirname,
-                    "src/components/styles"
-                ),
                 "@pages": path.resolve(__dirname, "src/pages"),
                 "@store": path.resolve(__dirname, "src/store"),
                 "@services": path.resolve(__dirname, "src/services"),
