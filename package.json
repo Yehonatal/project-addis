@@ -4,14 +4,14 @@
     "description": "Full-stack song management application with React frontend and Node.js backend for Addis software plc as my test project",
     "main": "index.js",
     "scripts": {
-        "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
-        "backend:dev": "cd backend && npm run dev",
-        "frontend:dev": "cd frontend && npm run dev",
-        "backend:install": "cd backend && npm install",
-        "frontend:install": "cd frontend && npm install",
-        "install:all": "npm run backend:install && npm run frontend:install",
-        "build": "cd frontend && npm run build",
-        "start": "cd backend && npm start"
+        "dev": "concurrently \"pnpm run backend:dev\" \"pnpm run frontend:dev\"",
+        "backend:dev": "cd backend && pnpm run dev",
+        "frontend:dev": "cd frontend && pnpm run dev",
+        "backend:install": "cd backend && pnpm install",
+        "frontend:install": "cd frontend && pnpm install",
+        "install:all": "pnpm run backend:install && pnpm run frontend:install",
+        "build": "cd frontend && pnpm run build",
+        "start": "cd backend && pnpm start"
     },
     "keywords": [
         "react",
