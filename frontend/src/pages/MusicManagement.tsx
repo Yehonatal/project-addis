@@ -8,8 +8,9 @@ import {
     ContentArea,
     StatsBar,
 } from "./MusicManagement.style";
-import SearchBar from "../components/SearchBar";
-import SongList from "../components/SongList";
+import SearchBar from "@components/SearchBar";
+import SongList from "@components/SongList";
+import Pagination from "@components/Pagination";
 
 const MusicManagement = () => {
     return (

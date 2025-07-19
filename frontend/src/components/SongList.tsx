@@ -25,25 +25,25 @@ export interface ISong {
 const SongList = () => {
     const searchQuery = "";
 
-    // const songs: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
-    //     {
-    //         title: "Bohemian Rhapsody",
-    //         artist: "Queen",
-    //         album: "A Night at the Opera",
-    //         year: 1975,
-    //         genre: "Rock",
-    //         duration: "5:55",
-    //     },
-    //     {
-    //         title: "Hotel California",
-    //         artist: "Eagles",
-    //         album: "Hotel California",
-    //         year: 1976,
-    //         genre: "Rock",
-    //         duration: "6:30",
-    //     },
-    // ];
-    const songs = [] as ISong[];
+    const songs: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
+        {
+            title: "Bohemian Rhapsody",
+            artist: "Queen",
+            album: "A Night at the Opera",
+            year: 1975,
+            genre: "Rock",
+            duration: "5:55",
+        },
+        {
+            title: "Hotel California",
+            artist: "Eagles",
+            album: "Hotel California",
+            year: 1976,
+            genre: "Rock",
+            duration: "6:30",
+        },
+    ];
+    // const songs = [] as ISong[];
 
     const loading = false;
 
