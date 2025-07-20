@@ -8,9 +8,15 @@ export const SortContainer = styled.div`
     background: ${props => props.theme.colors.surface};
     border-radius: 8px;
     border: 1px solid ${props => props.theme.colors.border};
+    flex-wrap: wrap;
     transition:
         background-color 0.3s ease,
         border-color 0.3s ease;
+
+    @media (max-width: 480px) {
+        gap: 0.5rem;
+        justify-content: center;
+    }
 `;
 
 export const SortLabel = styled.label`
@@ -33,6 +39,10 @@ export const SortSelect = styled.select`
     &:focus {
         outline: none;
         border-color: ${props => props.theme.colors.primary};
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
     }
 `;
 
@@ -62,5 +72,9 @@ export const SortButton = styled.button<{ active: boolean }>`
             props.active
                 ? props.theme.colors.primaryDark
                 : props.theme.colors.surface};
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
     }
 `;

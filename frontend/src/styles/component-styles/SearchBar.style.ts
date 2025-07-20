@@ -6,6 +6,10 @@ const SearchContainer = styled.div`
     align-items: center;
     max-width: 400px;
     width: 100%;
+
+    @media (max-width: 480px) {
+        max-width: 100%;
+    }
 `;
 
 const SearchInput = styled.input`
@@ -29,6 +33,11 @@ const SearchInput = styled.input`
     &::placeholder {
         color: ${props => props.theme.colors.textSecondary};
     }
+
+    @media (max-width: 400px) {
+        font-size: 0.95rem;
+        padding: 0.65rem 0.75rem 0.65rem 2rem;
+    }
 `;
 
 const SearchIcon = styled.div`
@@ -39,6 +48,11 @@ const SearchIcon = styled.div`
     pointer-events: none;
     z-index: 1;
     transition: color 0.3s ease;
+
+    @media (max-width: 400px) {
+        font-size: 1rem;
+        left: 0.75rem;
+    }
 `;
 
 const ClearButton = styled.button`
@@ -55,6 +69,10 @@ const ClearButton = styled.button`
     &:hover {
         background: ${props => props.theme.colors.background};
         color: ${props => props.theme.colors.text};
+    }
+
+    @media (max-width: 400px) {
+        right: 0.5rem;
     }
 `;
 

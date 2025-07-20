@@ -50,9 +50,12 @@ const Modal = ({
                 data-aos="zoom-in"
                 data-aos-duration="400"
                 data-aos-easing="ease-out-back"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
             >
                 <ModalHeader>
-                    <ModalTitle>{title}</ModalTitle>
+                    <ModalTitle id="modal-title">{title}</ModalTitle>
                     <CloseButton onClick={onClose}>×</CloseButton>
                 </ModalHeader>
                 <ModalBody>{children}</ModalBody>

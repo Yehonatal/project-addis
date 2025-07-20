@@ -13,6 +13,11 @@ const Overlay = styled.div`
     z-index: 1000;
     padding: 1rem;
     backdrop-filter: blur(4px);
+
+    @media (max-width: 480px) {
+        backdrop-filter: blur(6px);
+        padding: 0.5rem;
+    }
 `;
 
 const ModalContainer = styled.div`
@@ -28,6 +33,7 @@ const ModalContainer = styled.div`
     animation: modalSlideIn 0.3s ease-out;
     border: 2px solid #131314;
     border-bottom: 6px solid #131314;
+    outline: none;
 
     @keyframes modalSlideIn {
         from {
@@ -38,6 +44,12 @@ const ModalContainer = styled.div`
             opacity: 1;
             transform: scale(1) translateY(0);
         }
+    }
+
+    @media (max-width: 480px) {
+        max-width: 90vw;
+        border-width: 1.5px;
+        border-bottom-width: 3px;
     }
 `;
 

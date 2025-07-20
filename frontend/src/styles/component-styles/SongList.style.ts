@@ -1,48 +1,76 @@
 import styled from "@emotion/styled";
 
 const ListContainer = styled.div`
-    padding: 1.5rem;
+    padding: clamp(1.32rem, 5.28vw, 1.98rem);
+
+    @media (max-width: 480px) {
+        font-size: 1.32em;
+    }
 `;
 
 const LoadingContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: clamp(2rem, 5vw, 3rem);
 `;
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-
-    @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.32rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+    
+    @media (max-width: 575px) {
         grid-template-columns: 1fr;
-        gap: 1rem;
+    }
+
+    @media (min-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.65rem;
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.98rem;
     }
 `;
 
 const EmptyState = styled.div`
     text-align: center;
-    padding: 3rem 1rem;
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem);
     color: ${props => props.theme.colors.textSecondary};
     transition: color 0.3s ease;
 `;
 
 const EmptyIcon = styled.div`
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
     margin-bottom: 1rem;
 `;
 
 const EmptyTitle = styled.h3`
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
     margin-bottom: 0.5rem;
     color: #495057;
 `;
 
 const EmptyDescription = styled.p`
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
 `;
 
 export {

@@ -2,22 +2,29 @@ import styled from "@emotion/styled";
 
 const Card = styled.div`
     background: ${props => props.theme.colors.surface};
-    border-radius: 0.75rem;
-    padding: 0.75rem;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 2px solid ${props => props.theme.colors.border};
     border-bottom: 4px solid ${props => props.theme.colors.border};
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.04);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    height: 100%;
 
     &:hover {
-        transform: translateY(-1.5px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 576px) {
+        padding: 0.99rem;
+        gap: 0.66rem;
+        font-size: 1.32em;
     }
 `;
 
@@ -25,21 +32,42 @@ const CardHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.55rem;
+    }
 `;
 
 const SongInfo = styled.div`
     flex: 1;
     overflow: hidden;
+    min-width: 0;
+    width: 100%;
+
+    /* Ensure text doesn't overflow */
+    * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 `;
 
 const Title = styled.h3`
-    font-size: 0.95rem;
-    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
     color: ${props => props.theme.colors.text};
-    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 100%;
+
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    }
     transition: color 0.3s ease;
 `;
 
@@ -56,18 +84,21 @@ const Meta = styled.p`
 const ActionButtons = styled.div`
     display: flex;
     gap: 0.4rem;
+    flex-shrink: 0;
 
     button {
-        background: none;
+        background: ${props => props.theme.colors.border + "10"};
         border: none;
         padding: 0.3rem;
         font-size: 1rem;
         cursor: pointer;
         transition: 0.2s ease;
-        border-radius: 4px;
+        border-radius: 8px;
 
         &:hover {
-            background: ${props => props.theme.colors.background};
+            border: 1px solid ${props => props.theme.colors.border};
+
+            background: ${props => props.theme.colors.surface};
         }
 
         &.edit {
@@ -87,6 +118,11 @@ const CardBottom = styled.div`
     font-size: 0.75rem;
     gap: 0.5rem;
     flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 
 const Detail = styled.div`
@@ -119,6 +155,11 @@ const GenreBadge = styled.span`
     border: 2px solid ${props => props.theme.colors.border};
     border-bottom: 4px solid ${props => props.theme.colors.border};
     transition: background-color 0.3s ease;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export {

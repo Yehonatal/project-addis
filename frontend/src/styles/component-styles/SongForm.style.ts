@@ -3,26 +3,30 @@ import styled from "@emotion/styled";
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.65rem;
+    max-width: 600px;
+    width: 100%;
+    padding: clamp(1rem, 4vw, 2rem);
+    margin: 0 auto;
 `;
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.55rem;
 `;
 
 const Label = styled.label`
     font-weight: 600;
     color: #495057;
-    font-size: 0.9rem;
+    font-size: 0.99rem;
 `;
 
 const Input = styled.input`
-    padding: 0.75rem;
+    padding: 0.825rem;
     border: 2px solid #e9ecef;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: border-color 0.2s ease;
 
     &:focus {
@@ -36,10 +40,10 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-    padding: 0.75rem;
+    padding: 0.825rem;
     border: 2px solid #e9ecef;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background: white;
     transition: border-color 0.2s ease;
 
@@ -51,9 +55,14 @@ const Select = styled.select`
 
 const ButtonGroup = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: flex-end;
     margin-top: 1rem;
+
+    @media (max-width: 480px) {
+        justify-content: center;
+    }
 `;
 
 const Button = styled.button`
@@ -65,6 +74,7 @@ const Button = styled.button`
     transition: all 0.2s ease;
     border: 2px solid #131314;
     border-bottom: 5px solid #131314;
+
     &.primary {
         background: #667eea;
         color: white;

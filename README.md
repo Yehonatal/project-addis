@@ -18,11 +18,16 @@ I didn't have any experience with both tools (I have used redux before but only 
 ## Webpack config explanation and my reasoning    
 - [Webpack config explanation](frontend/webpack-doc.md) : Its in frontend/webpack-doc.md
 
-## AI Tools and Other assistant used disclaimer
-- Large amount of the AI assistant I use is "inline code completion" which I honestly really like since its cuts down actual coding time by a lot (when it works)    
+## API Documentation
+- [API Documentation](backend/README.md) : Its in backend/README.md
+
+## AI Tools and Other assistance used disclaimer
+- Large amount of the AI assistant I used is "inline code completion" which I honestly really like since its cuts down actual coding time by a lot (when it works)    
 - I used chatGpt, Gemini and inline copilot for reading the documentation when am learning something new or when I need reminding of something I don't remember how to implement directly but remember how it should work which is a great help as well specially when I have to build something using tech I haven't used that much before.
-- I used copilot and chatGpt for various bug detection and possible solutions, "I always try to ask these tools various solution for bugs am fining hard to fix and I look through and chose the right one, seems to work best for most cases"
-- I have used it to do mundane task in various points, Generating dummy songs data, copying UI styles in various components after I have made the general style and feel I want from the app.    
+- I used copilot and chatGpt for various bug detection and possible solutions, "I always try to ask these tools various solution for bugs am finding hard to fix and I look through and chose the right one, seems to work best for most cases"
+- I have used it to do mundane task in various points, Generating dummy songs data, generating theme colors, copying UI styles in various components after I have made the general style and feel I want from the app.    
+- I have used it to apply styling across styling files ex. "Make the fonts in these files (link the files) 10% larger"... stuff like that
+- I have used it to generate API documentation and API routes and I have read through it (I have used it to generate content on this page as well)
 
 ## Tech Stack as Per Requirement
 

@@ -8,6 +8,15 @@ const PaginationContainer = styled.div`
     border-top: 1px solid ${props => props.theme.colors.border};
     background: ${props => props.theme.colors.background};
     transition: background-color 0.3s ease;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    @media (max-width: 480px) {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
 `;
 
 const PaginationList = styled.ul`
@@ -16,6 +25,8 @@ const PaginationList = styled.ul`
     margin: 0;
     padding: 0;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const PaginationItem = styled.li`
@@ -28,14 +39,20 @@ const PageInfo = styled.span`
     font-size: 0.9rem;
     white-space: nowrap;
     transition: color 0.3s ease;
+
+    @media (max-width: 480px) {
+        margin: 0.25rem 0;
+        font-size: 0.85rem;
+        text-align: center;
+    }
 `;
 
 const PaginationButton = styled.button<{ active?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    height: 40px;
+    min-width: 36px;
+    height: 36px;
     padding: 0.5rem;
     border: 2px solid ${props => props.theme.colors.border};
     border-bottom: 5px solid ${props => props.theme.colors.border};
@@ -60,7 +77,14 @@ const PaginationButton = styled.button<{ active?: boolean }>`
     &:disabled {
         pointer-events: none;
     }
+
+    @media (max-width: 480px) {
+        min-width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
 `;
+
 export {
     PaginationContainer,
     PaginationList,

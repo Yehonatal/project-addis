@@ -1,22 +1,31 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    box-sizing: border-box;
 `;
 
 const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
 
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    @media (max-width: 480px) {
+        margin-bottom: 1rem;
     }
 `;
 
@@ -25,6 +34,11 @@ const HeaderLeft = styled.div`
     align-items: center;
     gap: 1rem;
     flex: 1;
+    min-width: 0;
+    
+    @media (max-width: 480px) {
+        gap: 0.75rem;
+    }
 `;
 
 const HeaderRight = styled.div`
@@ -55,6 +69,10 @@ const AddButton = styled.button`
         transform: translateY(0);
         outline: none;
     }
+    &:focus-visible {
+        outline: 3px solid ${props => props.theme.colors.primary};
+        outline-offset: 2px;
+    }
 `;
 
 const ContentArea = styled.div`
@@ -64,6 +82,12 @@ const ContentArea = styled.div`
     overflow: hidden;
     border: 1px solid ${props => props.theme.colors.border};
     transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+    width: 100%;
+    
+    @media (max-width: 768px) {
+        border-radius: 8px;
+    }
 `;
 
 const StatsBar = styled.div`
@@ -78,6 +102,12 @@ const StatsBar = styled.div`
     transition:
         background-color 0.3s ease,
         color 0.3s ease;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
 `;
 export {
     Container,
