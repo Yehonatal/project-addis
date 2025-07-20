@@ -2,6 +2,9 @@
 
 This is a full-stack song management application built for Addis software plc as a test project. The application allows users to manage songs, including adding, editing, and deleting them. It also provides a search functionality to find specific songs.
 
+### UI
+![Light Theme](frontend/public/preview/homepage-light.png)
+
 ## Preface 
 I didn't have any experience with both tools (I have used redux before but only in a tutorial never used it after) This was a really good exp in challenging myself to pick up new tools in a very limited time. The following repo's are what I built to learn how to make the project for the test, I used youtube videos, GPT(and Gemini when gpt didn't cut it), and their respective documentations 
 - [Learning Redux toolkit and saga](https://github.com/Yehonatal/learn-redux-toolkit-and-saga)
@@ -35,13 +38,13 @@ I didn't have any experience with both tools (I have used redux before but only 
 - [x] React app with **Redux Toolkit + Saga**
 - [x] Dummy **song data** (40 items)
 - [x] **Design** using Emotion's styled components
-- [ ] **CRUD operations** (Create, Read, Update, Delete)
-- [ ] **Paginated song listing** with 9 songs per page
-- [ ] **Search functionality** with debounced input
-- [ ] **Loading states** and error handling
-- [ ] **Toast notifications** for user feedback
-- [ ] **Modal dialogs** for forms and confirmations
-- [ ] **Form validation** with real-time feedback
+- [x] **CRUD operations** (Create, Read, Update, Delete)
+- [x] **Paginated song listing** with 9 songs per page
+- [x] **Search functionality** with debounced input
+- [x] **Loading states** and error handling
+- [x] **Toast notifications** for user feedback
+- [x] **Modal dialogs** for forms and confirmations
+- [x] **Form validation** with real-time feedback
 
 
 ## Quick Start
