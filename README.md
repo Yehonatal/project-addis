@@ -4,6 +4,9 @@ This is a full-stack song management application built for Addis software plc as
 
 ## Deployed
 - Frontend: https://project-addis.vercel.app
+
+Render's Free tier for web services will automatically spin down after 15 minutes of inactivity, then it stops consuming instance hours once spun down. So, when a new request arrives, Render spins the service back up, which can take up to about a minute, resulting in a delayed (cold‑start) response I can't do anything about it, you just have to reload it and wait (I promise it works).
+
 - Backend: https://project-addis.onrender.com
 
 ### UI
