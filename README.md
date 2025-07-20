@@ -2,6 +2,10 @@
 
 This is a full-stack song management application built for Addis software plc as a test project. The application allows users to manage songs, including adding, editing, and deleting them. It also provides a search functionality to find specific songs.
 
+## Deployed
+- Frontend: https://project-addis.vercel.app
+- Backend: https://project-addis.onrender.com
+
 ### UI
 ![Light Theme](frontend/public/preview/homepage-light.png)
 
