@@ -6,6 +6,6 @@ export interface ISong {
     year: number;
     genre: string;
     duration: string;
-    createdAt: string;
-    updatedAt: string;
+    createdAt?: string;
+    updatedAt?: string;
 }

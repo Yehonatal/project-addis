@@ -10,33 +10,19 @@ import {
     EmptyDescription,
 } from "@/styles/component-styles/SongList.style";
 import { ISong } from "@/types/song";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
-const SongList = () => {
-    const searchQuery = "";
+const SongList = ({
+    songs,
+    isLoading,
+}: {
+    songs: ISong[];
+    isLoading: boolean;
+}) => {
+    const { searchQuery } = useSelector((state: RootState) => state.songs);
 
-    const songs: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
-        {
-            title: "Bohemian Rhapsody",
-            artist: "Queen",
-            album: "A Night at the Opera",
-            year: 1975,
-            genre: "Rock",
-            duration: "5:55",
-        },
-        {
-            title: "Hotel California",
-            artist: "Eagles",
-            album: "Hotel California",
-            year: 1976,
-            genre: "Rock",
-            duration: "6:30",
-        },
-    ];
-    // const songs = [] as ISong[];
-
-    const loading = false;
-
-    if (loading) {
+    if (isLoading) {
         return (
             <LoadingContainer>
                 <LoadingSpinner />
@@ -80,9 +66,9 @@ const SongList = () => {
 
     return (
         <ListContainer>
-            <Grid>
+            <Grid data-aos="fade-up" data-aos-delay="100">
                 {songs.map((song, index) => (
-                    <SongCard />
+                    <SongCard key={song.id} song={song} index={index} />
                 ))}
             </Grid>
         </ListContainer>

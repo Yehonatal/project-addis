@@ -34,8 +34,8 @@ const HeaderRight = styled.div`
 `;
 
 const AddButton = styled.button`
-    background: #76ca76ff;
-    color: white;
+    background: ${props => props.theme.colors.success};
+    color: ${props => props.theme.colors.white};
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -43,11 +43,12 @@ const AddButton = styled.button`
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #131314;
-    border-bottom: 5px solid #131314;
+    border: 2px solid ${props => props.theme.colors.border};
+    border-bottom: 5px solid ${props => props.theme.colors.border};
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        background: ${props => props.theme.colors.primary};
     }
 
     &:active {
@@ -57,21 +58,26 @@ const AddButton = styled.button`
 `;
 
 const ContentArea = styled.div`
-    background: white;
+    background: ${props => props.theme.colors.surface};
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 1px solid ${props => props.theme.colors.border};
+    transition: background-color 0.3s ease;
 `;
 
 const StatsBar = styled.div`
-    background: #f8f9fa;
+    background: ${props => props.theme.colors.background};
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid ${props => props.theme.colors.border};
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.9rem;
-    color: #6c757d;
+    color: ${props => props.theme.colors.textSecondary};
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 `;
 export {
     Container,

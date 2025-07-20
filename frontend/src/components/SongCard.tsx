@@ -11,32 +11,55 @@ import {
     Value,
     GenreBadge,
 } from "@/styles/component-styles/SongCard.style";
+import { ISong } from "@/types/song";
+import { useDispatch } from "react-redux";
+import { openEditModal, openDeleteModal } from "@/store/slices/uiSlice";
+import { setCurrentSong } from "@/store/slices/songsSlice";
 
-const SongCard = () => {
+const SongCard = ({ song, index }: { song: ISong; index: number }) => {
+    const dispatch = useDispatch();
+
+    const handleEdit = () => {
+        dispatch(setCurrentSong(song));
+        dispatch(openEditModal());
+    };
+
+    const handleDelete = () => {
+        dispatch(setCurrentSong(song));
+        dispatch(openDeleteModal());
+    };
+
+    const animationDelay = index * 100;
+
+    const animationTypes = ["fade-up", "fade-up", "fade-up", "zoom-in"];
+    const animationType = animationTypes[index % animationTypes.length];
+
     return (
         <Card
-            data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos={animationType}
+            data-aos-delay={animationDelay}
             data-aos-duration="600"
             data-aos-easing="ease-out-cubic"
             className="song-card-container"
         >
             <CardHeader>
                 <SongInfo>
-                    <Title>All glory to Christ</Title>
-                    <Meta>Jesus christ • Gospel</Meta>
+                    <Title>{song.title}</Title>
+                    <Meta>
+                        {song.artist} • {song.album}
+                    </Meta>
                 </SongInfo>
                 <ActionButtons>
                     <button
                         className="edit"
-                        onClick={() => {}}
+                        onClick={handleEdit}
                         title="Edit song"
                     >
                         ✏️
                     </button>
                     <button
                         className="delete"
-                        onClick={() => {}}
+                        onClick={handleDelete}
                         title="Delete song"
                     >
                         🗑️
@@ -47,13 +70,13 @@ const SongCard = () => {
             <CardBottom>
                 <Detail>
                     <Label>Year</Label>
-                    <Value>{1999}</Value>
+                    <Value>{song.year}</Value>
                 </Detail>
                 <Detail>
                     <Label>Duration</Label>
-                    <Value>Infinity</Value>
+                    <Value>{song.duration}</Value>
                 </Detail>
-                <GenreBadge>from God</GenreBadge>
+                <GenreBadge>{song.genre}</GenreBadge>
             </CardBottom>
         </Card>
     );

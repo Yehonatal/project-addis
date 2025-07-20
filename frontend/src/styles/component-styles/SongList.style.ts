@@ -25,7 +25,8 @@ const Grid = styled.div`
 const EmptyState = styled.div`
     text-align: center;
     padding: 3rem 1rem;
-    color: #6c757d;
+    color: ${props => props.theme.colors.textSecondary};
+    transition: color 0.3s ease;
 `;
 
 const EmptyIcon = styled.div`

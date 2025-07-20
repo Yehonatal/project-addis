@@ -11,32 +11,34 @@ const SearchContainer = styled.div`
 const SearchInput = styled.input`
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 2px solid #e9ecef;
-    border-radius: 25px;
+    border: 2px solid ${props => props.theme.colors.border};
+    border-radius: 8px;
     font-size: 1rem;
-    background: white;
+    background: ${props => props.theme.colors.surface};
+    color: ${props => props.theme.colors.text};
     transition: all 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 2px solid #131314;
-    border-bottom: 5px solid #131314;
+    border-bottom: 5px solid ${props => props.theme.colors.border};
+
     &:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: ${props => props.theme.colors.primary};
+        box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
     }
 
     &::placeholder {
-        color: #adb5bd;
+        color: ${props => props.theme.colors.textSecondary};
     }
 `;
 
 const SearchIcon = styled.div`
     position: absolute;
     left: 1rem;
-    color: #6c757d;
+    color: ${props => props.theme.colors.textSecondary};
     font-size: 1.1rem;
     pointer-events: none;
     z-index: 1;
+    transition: color 0.3s ease;
 `;
 
 const ClearButton = styled.button`
@@ -44,15 +46,15 @@ const ClearButton = styled.button`
     right: 0.75rem;
     background: none;
     border: none;
-    color: #6c757d;
+    color: ${props => props.theme.colors.textSecondary};
     cursor: pointer;
     padding: 0.25rem;
     border-radius: 50%;
     transition: all 0.2s ease;
 
     &:hover {
-        background: #f8f9fa;
-        color: #495057;
+        background: ${props => props.theme.colors.background};
+        color: ${props => props.theme.colors.text};
     }
 `;
 

@@ -26,6 +26,8 @@ const ModalContainer = styled.div`
     max-height: 90vh;
     overflow-y: auto;
     animation: modalSlideIn 0.3s ease-out;
+    border: 2px solid #131314;
+    border-bottom: 6px solid #131314;
 
     @keyframes modalSlideIn {
         from {

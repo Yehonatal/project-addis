@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
 
 const Card = styled.div`
-    background: white;
+    background: ${props => props.theme.colors.surface};
     border-radius: 0.75rem;
     padding: 0.75rem;
-    border: 2px solid #131314;
-    border-bottom: 4px solid #131314;
+    border: 2px solid ${props => props.theme.colors.border};
+    border-bottom: 4px solid ${props => props.theme.colors.border};
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.04);
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background-color 0.3s ease;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -34,20 +35,22 @@ const SongInfo = styled.div`
 const Title = styled.h3`
     font-size: 0.95rem;
     font-weight: 700;
-    color: #212529;
+    color: ${props => props.theme.colors.text};
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.3s ease;
 `;
 
 const Meta = styled.p`
     font-size: 0.75rem;
-    color: #495057;
+    color: ${props => props.theme.colors.textSecondary};
     margin: 0.25rem 0 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.3s ease;
 `;
 
 const ActionButtons = styled.div`
@@ -64,15 +67,15 @@ const ActionButtons = styled.div`
         border-radius: 4px;
 
         &:hover {
-            background: #f1f3f5;
+            background: ${props => props.theme.colors.background};
         }
 
         &.edit {
-            color: #0d6efd;
+            color: ${props => props.theme.colors.primary};
         }
 
         &.delete {
-            color: #dc3545;
+            color: ${props => props.theme.colors.error};
         }
     }
 `;
@@ -94,25 +97,28 @@ const Detail = styled.div`
 
 const Label = styled.span`
     font-size: 0.65rem;
-    color: #868e96;
+    color: ${props => props.theme.colors.textSecondary};
     text-transform: uppercase;
     margin-bottom: 0.1rem;
+    transition: color 0.3s ease;
 `;
 
 const Value = styled.span`
-    color: #343a40;
+    color: ${props => props.theme.colors.text};
     font-weight: 600;
+    transition: color 0.3s ease;
 `;
 
 const GenreBadge = styled.span`
-    background: #7bbf56;
-    color: white;
+    background: ${props => props.theme.colors.success};
+    color: ${props => props.theme.colors.white};
     padding: 0.25rem 0.75rem;
     font-size: 0.65rem;
     font-weight: 600;
     border-radius: 999px;
-    border: 2px solid #131314;
-    border-bottom: 4px solid #131314;
+    border: 2px solid ${props => props.theme.colors.border};
+    border-bottom: 4px solid ${props => props.theme.colors.border};
+    transition: background-color 0.3s ease;
 `;
 
 export {

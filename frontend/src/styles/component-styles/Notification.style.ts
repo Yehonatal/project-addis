@@ -2,73 +2,94 @@ import styled from "@emotion/styled";
 
 const NotificationsContainer = styled.div`
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1050;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    max-width: 400px;
+    max-width: 350px;
+    width: 350px;
+    pointer-events: none;
+
+    > * {
+        pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+        right: 0.5rem;
+        left: 0.5rem;
+        max-width: none;
+        width: auto;
+    }
 `;
 
-const Notification = styled.div`
+const Notification = styled.div<{
+    type: "success" | "error" | "warning" | "info";
+}>`
     background: ${props => {
         switch (props.type) {
             case "success":
-                return "#d1e7dd";
+                return props.theme.colors.success + "20"; // 20% opacity
             case "error":
-                return "#f8d7da";
+                return props.theme.colors.error + "20";
             case "warning":
-                return "#fff3cd";
+                return props.theme.colors.warning + "20";
             default:
-                return "#d1ecf1";
+                return props.theme.colors.primary + "20";
         }
     }};
-    border: 1px solid
+    border: 2px solid
         ${props => {
             switch (props.type) {
                 case "success":
-                    return "#badbcc ";
+                    return props.theme.colors.success;
                 case "error":
-                    return "#f5c6cb";
+                    return props.theme.colors.error;
                 case "warning":
-                    return "#ffeaa7";
+                    return props.theme.colors.warning;
                 default:
-                    return "#bee5eb";
+                    return props.theme.colors.primary;
             }
         }};
     color: ${props => {
         switch (props.type) {
             case "success":
-                return "#0f5132";
+                return props.theme.colors.success;
             case "error":
-                return "#721c24";
+                return props.theme.colors.error;
             case "warning":
-                return "#856404";
+                return props.theme.colors.warning;
             default:
-                return "#055160";
+                return props.theme.colors.primary;
         }
     }};
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1.25rem;
+    border-radius: 12px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideIn 0.3s ease-out;
-    border: 2px solid #131314;
-    border-bottom: 5px solid #131314;
 
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
+    min-height: 60px;
+
+    border-bottom: 4px solid
+        ${props => {
+            switch (props.type) {
+                case "success":
+                    return props.theme.colors.success;
+                case "error":
+                    return props.theme.colors.error;
+                case "warning":
+                    return props.theme.colors.warning;
+                default:
+                    return props.theme.colors.primary;
+            }
+        }};
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 `;
 
 const NotificationContent = styled.div`
@@ -85,20 +106,40 @@ const NotificationIcon = styled.span`
 const NotificationMessage = styled.span`
     font-weight: 500;
     line-height: 1.4;
+    font-size: 0.9rem;
 `;
 
 const CloseButton = styled.button`
-    background: none;
-    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     color: inherit;
     cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
     margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
     &:hover {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.15);
+        transform: scale(1.1);
+        border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:focus {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
     }
 `;
 

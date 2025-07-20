@@ -1,17 +1,16 @@
 import styled from "@emotion/styled";
 
 const ErrorContainer = styled.div`
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
-    padding: 1rem 1.5rem;
+    background: ${props => props.theme.colors.error + "20"};
+    border: 2px solid ${props => props.theme.colors.error};
+    color: ${props => props.theme.colors.error};
+    padding: 0.35rem 1.5rem;
     border-radius: 8px;
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #131314;
-    border-bottom: 5px solid #131314;
+    border-bottom: 4px solid ${props => props.theme.colors.error};
 `;
 
 const ErrorContent = styled.div`
@@ -29,12 +28,12 @@ const ErrorText = styled.span`
 `;
 
 const CloseButton = styled.button`
-    background: none;
+    background: #f1ced2ff;
     border: none;
     color: #721c24;
     cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 4px;
+    padding: 5px 10px;
+    border-radius: 100%;
     transition: background-color 0.2s ease;
 
     &:hover {
