@@ -1,9 +1,17 @@
 import axios from "axios";
 import { ISong } from "@/types/song";
 
-// Fetch songs API - Fetches all the songs
+// Get API URL from environment variables with type safety
+declare const process: {
+    env: {
+        REACT_APP_API_URL?: string;
+    };
+};
+
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+
 const api = axios.create({
-    baseURL: "https://project-addis.onrender.com/api",
+    baseURL: API_URL,
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",

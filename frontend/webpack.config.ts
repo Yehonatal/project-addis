@@ -2,11 +2,17 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import "webpack-dev-server";
 import path from "path";
 import { fileURLToPath } from "url";
+import webpack from "webpack";
+import Dotenv from "dotenv-webpack";
+
+// Load environment variables
+const env = process.env.NODE_ENV || "development";
+const envPath = `.env.${env}`;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const config = (env: any, argv: any) => {
+const config = async (env: any, argv: any) => {
     const isProduction = argv.mode === "production";
 
     return {
@@ -19,6 +25,11 @@ const config = (env: any, argv: any) => {
             publicPath: "/",
         },
         resolve: {
+            fallback: {
+                process: "process/browser",
+                path: "path-browserify",
+                util: "util/",
+            },
             extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
             alias: {
                 "@": path.resolve(__dirname, "src"),
@@ -71,6 +82,11 @@ const config = (env: any, argv: any) => {
             ],
         },
         plugins: [
+            new Dotenv({
+                path: `./${envPath}`,
+                systemvars: true, // Load system environment variables
+                silent: true, // Suppress warnings about missing .env file uffffff
+            }),
             new HtmlWebpackPlugin({
                 template: "./public/index.html",
                 title: "Project Addis - Music List",
@@ -88,7 +104,7 @@ const config = (env: any, argv: any) => {
             proxy: [
                 {
                     context: ["/api"],
-                    target: "http://localhost:5001",
+                    target: "http://localhost:5000",
                     changeOrigin: true,
                     secure: false,
                 },
