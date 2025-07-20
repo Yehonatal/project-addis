@@ -10,7 +10,7 @@ import {
     Label,
     Value,
     GenreBadge,
-} from "@styles/SongCard.style";
+} from "@/styles/component-styles/SongCard.style";
 
 const SongCard = () => {
     return (

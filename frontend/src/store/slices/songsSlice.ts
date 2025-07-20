@@ -50,3 +50,6 @@ const songsSlice = createSlice({
         },
     },
 });
+
+export const {} = songsSlice.actions;
+export default songsSlice.reducer;

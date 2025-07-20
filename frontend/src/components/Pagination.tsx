@@ -3,7 +3,7 @@ import {
     PaginationList,
     PaginationItem,
     PageInfo,
-} from "@styles/Pagination.style";
+} from "@/styles/component-styles/Pagination.style";
 import styled from "@emotion/styled";
 
 const PaginationButton = styled.button`

@@ -8,7 +8,7 @@ import {
     SongTitle,
     ButtonGroup,
     Button,
-} from "@styles/DeleteConfirmModal.style";
+} from "@/styles/component-styles/DeleteConfirmModal.style";
 
 const DeleteConfirmModal = () => {
     return <>DeleteConfirmModal</>;

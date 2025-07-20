@@ -4,7 +4,7 @@ import {
     ErrorIcon,
     ErrorText,
     CloseButton,
-} from "@styles/ErrorMessage.style";
+} from "@/styles/component-styles/ErrorMessage.style";
 
 const ErrorMessage = () => {
     return <>ErrorMessage</>;

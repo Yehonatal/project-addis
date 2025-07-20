@@ -8,7 +8,7 @@ import {
     EmptyIcon,
     EmptyTitle,
     EmptyDescription,
-} from "@styles/SongList.style";
+} from "@/styles/component-styles/SongList.style";
 import { ISong } from "@/types/song";
 
 const SongList = () => {

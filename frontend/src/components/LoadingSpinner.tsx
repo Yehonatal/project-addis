@@ -2,7 +2,7 @@ import {
     SpinnerContainer,
     Spinner,
     LoadingText,
-} from "@styles/LoadingSpinner.style";
+} from "@/styles/component-styles/LoadingSpinner.style";
 
 const LoadingSpinner = () => {
     return (

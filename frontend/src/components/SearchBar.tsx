@@ -3,7 +3,7 @@ import {
     SearchInput,
     SearchIcon,
     ClearButton,
-} from "@styles/SearchBar.style";
+} from "@/styles/component-styles/SearchBar.style";
 
 const SearchBar = () => {
     return (

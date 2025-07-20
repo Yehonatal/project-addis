@@ -7,7 +7,7 @@ import {
     ButtonGroup,
     Button,
     ErrorText,
-} from "@styles/SongForm.style";
+} from "@/styles/component-styles/SongForm.style";
 
 const genres: string[] = [
     "Rock",

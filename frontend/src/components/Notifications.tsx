@@ -5,7 +5,7 @@ import {
     NotificationIcon,
     NotificationMessage,
     CloseButton,
-} from "@styles/Notification.style";
+} from "@/styles/component-styles/Notification.style";
 
 const Notifications = () => {
     return <>Notifications</>;
