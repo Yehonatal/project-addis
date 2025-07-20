@@ -9,18 +9,7 @@ import {
     EmptyTitle,
     EmptyDescription,
 } from "@styles/SongList.style";
-
-export interface ISong {
-    id: string;
-    title: string;
-    artist: string;
-    album: string;
-    year: number;
-    genre: string;
-    duration: string;
-    createdAt: string;
-    updatedAt: string;
-}
+import { ISong } from "@/types/song";
 
 const SongList = () => {
     const searchQuery = "";
