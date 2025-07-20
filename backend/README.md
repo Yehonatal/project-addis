@@ -465,7 +465,7 @@ await api.delete('/songs/song-id');
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Yonatan Afewerk**
 Developed for Addis Software PLC (Internship Project)

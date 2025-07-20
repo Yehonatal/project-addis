@@ -45,7 +45,7 @@ I didn't have any experience with both tools (I have used redux before but only 
 ## Features to be Included (For now)
 - [x] **Custom** Webpack setup
 - [x] React app with **Redux Toolkit + Saga**
-- [x] Dummy **song data** (40 items)
+- [x] Dummy **song data** (80 items)
 - [x] **Design** using Emotion's styled components
 - [x] **CRUD operations** (Create, Read, Update, Delete)
 - [x] **Paginated song listing** with 9 songs per page
@@ -152,16 +152,3 @@ song-management-app/
 - `pnpm run dev` - Start development server with hot reload
 - `pnpm run build` - Build for production
 
-## 🌐 Access Locally
-
-1. **Install all dependencies**
-   ```bash
-   pnpm run install:all
-
-    // Run frontend and backend
-
-   pnpm run dev
-   ```
-Visit:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000

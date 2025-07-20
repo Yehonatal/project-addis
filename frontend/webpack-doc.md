@@ -205,7 +205,7 @@ This section configures the development server, optimizing the local development
   * **`hot: true`**: Enables **Hot Module Replacement (HMR)**, which updates only modified modules in the browser without a full page reload, dramatically speeding up development by preserving application state.
   * **`historyApiFallback: true`**: Directs any non-existent paths back to `index.html`. This is vital for single-page applications (SPAs) that handle routing on the client-side.
   * **`proxy`**:
-      * Intercepts requests starting with `/api` (`context: ["/api"]`) and redirects them to a different target (e.g., `http://localhost:5000`). **Note the target has been updated from `http://localhost:5001` to `http://localhost:5000`**.
+      * Intercepts requests starting with `/api` (`context: ["/api"]`) and redirects them to a different target (e.g., `http://localhost:5000`). 
       * `changeOrigin: true` modifies the `Host` header of the proxied request to match the target's host.
       * `secure: false` bypasses SSL certificate verification, which is often useful in development environments with self-signed certificates.
       * This setup solves **Cross-Origin Resource Sharing (CORS)** issues during development, allowing your frontend to seamlessly make API calls to a separate backend server running on a different port.
@@ -214,7 +214,7 @@ This section configures the development server, optimizing the local development
 
 ### Optimization (`optimization`)
 
-Because of time constraints I haven't gone deep into this part but I have added some features from what I have seen on other projects. I try to read about this more and use it in the project.
+Because of time constraints I haven't gone deep into this part but I have added some features from what I have seen on other projects. I try to read about this more and use it in the project after the deadline.
 
   * **`splitChunks`**: Enables **code splitting**, a Webpack feature that divides your large JavaScript bundle into smaller, more manageable chunks (`chunks: "all"` applies this to all types of chunks).
       * **`cacheGroups.vendor`**: Specifically creates a separate chunk named "vendors" for all code originating from the `node_modules` directory (`test: /[\\/]node_modules[\\/]/`). This allows browsers to cache frequently used third-party libraries separately, reducing download sizes and improving load times for returning users.
