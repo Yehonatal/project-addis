@@ -16,7 +16,7 @@ const SearchBar = () => {
     );
     const [localSearch, setLocalSearch] = useState(searchQuery);
 
-    // Debounce search to avoid too many API calls
+    // Debounce search to avoid too many re-renders
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             dispatch(setSearchQuery(localSearch));

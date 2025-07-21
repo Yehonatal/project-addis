@@ -14,9 +14,9 @@ export const store = configureStore({
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
             thunk: false,
-            serializableCheck: {
-                ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
-            },
+            // serializableCheck: { // not gonna use redux persist for now
+            //     ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
+            // },
         }).concat(sagaMiddleware),
 });
 
