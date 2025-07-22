@@ -1,38 +1,13 @@
-import { ISong } from "../types/types.js";
+import { query } from "../db.js";
+import dotenv from "dotenv";
+import path from "path";
 import { v4 as uuidv4 } from "uuid";
 
-export class Song implements ISong {
-    id: string;
-    title: string;
-    artist: string;
-    album: string;
-    year: number;
-    genre: string;
-    duration: string;
-    createdAt: string;
-    updatedAt: string;
+// Load environment variables
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
-    constructor({
-        title,
-        artist,
-        album,
-        year,
-        genre,
-        duration,
-    }: Omit<ISong, "id" | "createdAt" | "updatedAt">) {
-        this.id = uuidv4();
-        this.title = title;
-        this.artist = artist;
-        this.album = album;
-        this.year = year;
-        this.genre = genre;
-        this.duration = duration;
-        this.createdAt = new Date().toISOString();
-        this.updatedAt = new Date().toISOString();
-    }
-}
-
-export const songsData: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
+// Import songs data directly
+const songsData = [
     {
         title: "Bohemian Rhapsody",
         artist: "Queen",
@@ -675,4 +650,62 @@ export const songsData: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
     },
 ];
 
-export const songs: ISong[] = songsData.map((songData) => new Song(songData));
+async function seedDatabase() {
+    try {
+        console.log("Starting database seeding...");
+
+        // Clear existing data
+        await query("TRUNCATE TABLE songs RESTART IDENTITY CASCADE");
+        console.log("Cleared existing songs data");
+
+        // Insert first 40 songs
+        const insertQuery = `
+            INSERT INTO songs (id, title, artist, album, year, genre, duration, created_at, updated_at)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        `;
+
+        const now = new Date().toISOString();
+        let count = 0;
+
+        // Take only the first 40 songs
+        const songsToInsert = songsData.slice(0, 40);
+
+        for (const song of songsToInsert) {
+            const values = [
+                uuidv4(), // Generate a new UUID for each song
+                song.title,
+                song.artist,
+                song.album,
+                song.year,
+                song.genre,
+                song.duration,
+                now,
+                now,
+            ];
+
+            await query(insertQuery, values);
+            count++;
+
+            // Log progress every 10 songs
+            if (count % 10 === 0) {
+                console.log(`Seeded ${count} songs...`);
+            }
+        }
+
+        console.log(`✅ Successfully seeded ${count} songs into the database`);
+        process.exit(0);
+    } catch (error) {
+        console.error("Error seeding database:", error);
+        process.exit(1);
+    }
+}
+
+// Run the seed function if this file is executed directly
+if (process.argv[1].includes("seed.ts")) {
+    console.log("Starting seed script...");
+    seedDatabase();
+} else {
+    console.log("Seed script imported as module");
+}
+
+export default seedDatabase;
