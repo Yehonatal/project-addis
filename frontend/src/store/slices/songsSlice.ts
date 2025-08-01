@@ -149,7 +149,7 @@ const songsSlice = createSlice({
         updateSongSuccess: (state, action) => {
             state.isLoading = false;
             const index = state.allSongs.findIndex(
-                song => song.id === action.payload.id
+                song => song._id === action.payload._id
             );
             if (index !== -1) {
                 state.allSongs[index] = action.payload;
@@ -172,7 +172,7 @@ const songsSlice = createSlice({
         deleteSongSuccess: (state, action) => {
             state.isLoading = false;
             state.allSongs = state.allSongs.filter(
-                song => song.id !== action.payload.id
+                song => song._id !== action.payload._id
             );
 
             // Reapply filters and pagination
