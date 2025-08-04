@@ -3,6 +3,7 @@ import express from "express";
 import { ISong, CreateSongRequest, UpdateSongRequest } from "../types/types";
 import mongoose from "mongoose";
 import Song from "../models/Song";
+import { protect } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
@@ -64,7 +65,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // POST /api/songs - Create a new song
-router.post("/", async (req, res) => {
+router.post("/", protect, async (req, res) => {
     try {
         const songData: CreateSongRequest = req.body;
 
@@ -88,7 +89,8 @@ router.post("/", async (req, res) => {
         }
 
         // Create new song
-        const newSong = new Song(songData);
+        // Add the user ID to the song data
+        const newSong = new Song({ ...songData, user: req.user!._id });
         await newSong.save();
 
         res.status(201).json(newSong);
@@ -106,7 +108,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT /api/songs/:id - Update a song
-router.put("/:id", async (req, res) => {
+router.put("/:id", protect, async (req, res) => {
     try {
         const { id } = req.params;
         if (!mongoose.isValidObjectId(id)) {
@@ -138,7 +140,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE /api/songs/:id - Delete a song
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", protect, async (req, res) => {
     try {
         const { id } = req.params;
         if (!mongoose.isValidObjectId(id)) {

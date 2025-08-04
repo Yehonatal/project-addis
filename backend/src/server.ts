@@ -2,8 +2,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import songsRoutes from "./routes/songs";
 import connectDb from "./config/db";
+import songsRoutes from "./routes/songs";
+import authRoutes from "./routes/auth";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -38,6 +39,7 @@ connectDb();
 
 // Routes
 app.use("/api/songs", songsRoutes);
+app.use("/api/auth", authRoutes);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
@@ -82,6 +84,7 @@ app.listen(PORT, () => {
     console.log(`🎵 Song Management API server is running on port ${PORT}`);
     console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
     console.log(`🎶 Songs API: http://localhost:${PORT}/api/songs`);
+    console.log(`🔒 Auth API: http://localhost:${PORT}/api/auth`);
 });
 
 export default app;
