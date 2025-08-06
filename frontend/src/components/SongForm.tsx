@@ -58,7 +58,7 @@ const SongForm = () => {
     const isOpen = isCreateModalOpen || isEditModalOpen;
     const isEditing = isEditModalOpen && currentSong;
 
-    const [formData, setFormData] = useState<Omit<ISong, "id">>({
+    const [formData, setFormData] = useState<Omit<ISong, "_id">>({
         title: "",
         artist: "",
         album: "",
@@ -136,7 +136,7 @@ const SongForm = () => {
         if (isEditing) {
             dispatch(
                 updateSongRequest({
-                    id: currentSong!.id,
+                    id: currentSong!._id,
                     songData: formData,
                 })
             );

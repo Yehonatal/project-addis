@@ -41,22 +41,15 @@ export const createSong = async (songData: ISong) => {
     return response;
 };
 
-export const updateSong = async (id: string, songData: ISong) => {
-    const response = await api.put(`/songs/${id}`, songData);
-    return response;
-};
-export const deleteSong = async (id: string) => {
-    const response = await api.delete(`/songs/${id}`);
+export const deleteSong = async (_id: string) => {
+    const response = await api.delete(`/songs/${_id}`);
     return response;
 };
 
-export const searchSongs = async (query: string) => {
-    const response = await api.get(`/songs/search`, {
-        params: { q: query },
-    });
+export const updateSong = async (_id: string, songData: ISong) => {
+    const response = await api.put(`/songs/${_id}`, songData);
     return response;
 };
-
 // Health Check
 export const healthCheck = async () => {
     const response = await api.get("/health");

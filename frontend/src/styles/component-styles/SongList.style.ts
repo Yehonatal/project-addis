@@ -23,7 +23,8 @@ const Grid = styled.div`
     max-width: 100%;
     box-sizing: border-box;
     padding: 0 0.5rem;
-    
+    gap: 1.5rem;
+
     @media (max-width: 575px) {
         grid-template-columns: 1fr;
     }
@@ -34,7 +35,6 @@ const Grid = styled.div`
 
     @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.65rem;
     }
 
     @media (min-width: 992px) {
@@ -43,7 +43,6 @@ const Grid = styled.div`
 
     @media (min-width: 1200px) {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 1.98rem;
     }
 `;
 

@@ -1,19 +1,23 @@
 import express from "express";
-import { songs, Song } from "../data/songs";
+// import { songs, Song } from "../data/songs";
 import { ISong, CreateSongRequest, UpdateSongRequest } from "../types/types";
+import mongoose from "mongoose";
+import Song from "../models/Song";
+import { protect } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
-let songsDatabase: ISong[] = [...songs];
+// let songsDatabase: ISong[] = [...songs];
 
-const getAllSongs = () => {
-    return songsDatabase;
+const getAllSongs = async () => {
+    return await Song.find();
 };
 
 // GET /api/songs - Get all songs
-router.get("/", (_req, res) => {
+router.get("/", async (_req, res) => {
     try {
-        res.json(getAllSongs());
+        const songs = await getAllSongs();
+        res.json(songs);
     } catch (error) {
         console.error("Error fetching songs:", error);
         res.status(500).json({
@@ -28,10 +32,16 @@ router.get("/", (_req, res) => {
 });
 
 // GET /api/songs/:id - Get a specific song by ID
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const { id } = req.params;
-        const song = songsDatabase.find((s) => s.id === id);
+        if (!mongoose.isValidObjectId(id)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid song ID format",
+            });
+        }
+        const song = await Song.findById(id);
 
         if (!song) {
             return res.status(404).json({
@@ -55,7 +65,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/songs - Create a new song
-router.post("/", (req, res) => {
+router.post("/", protect, async (req, res) => {
     try {
         const songData: CreateSongRequest = req.body;
 
@@ -79,8 +89,9 @@ router.post("/", (req, res) => {
         }
 
         // Create new song
-        const newSong = new Song(songData);
-        songsDatabase.unshift(newSong);
+        // Add the user ID to the song data
+        const newSong = new Song({ ...songData, user: req.user!._id });
+        await newSong.save();
 
         res.status(201).json(newSong);
     } catch (error) {
@@ -97,29 +108,24 @@ router.post("/", (req, res) => {
 });
 
 // PUT /api/songs/:id - Update a song
-router.put("/:id", (req, res) => {
+router.put("/:id", protect, async (req, res) => {
     try {
         const { id } = req.params;
-        const updateData: UpdateSongRequest = req.body;
-
-        const songIndex = songsDatabase.findIndex((s) => s.id === id);
-
-        if (songIndex === -1) {
-            return res.status(404).json({
+        if (!mongoose.isValidObjectId(id)) {
+            return res.status(400).json({
                 success: false,
-                message: "Song not found",
+                message: "Invalid song ID format",
             });
         }
 
-        const updatedSong = {
-            ...songsDatabase[songIndex],
-            ...updateData,
-            updatedAt: new Date().toISOString(),
-        };
+        const updateData: UpdateSongRequest = req.body;
 
-        songsDatabase[songIndex] = updatedSong;
+        await Song.findByIdAndUpdate(id, updateData, { new: true });
 
-        res.json(updatedSong);
+        res.json({
+            success: true,
+            message: "Song updated successfully",
+        });
     } catch (error) {
         console.error("Error updating song:", error);
         res.status(500).json({
@@ -134,25 +140,28 @@ router.put("/:id", (req, res) => {
 });
 
 // DELETE /api/songs/:id - Delete a song
-router.delete("/:id", (req, res) => {
+router.delete("/:id", protect, async (req, res) => {
     try {
         const { id } = req.params;
-        const songIndex = songsDatabase.findIndex((s) => s.id === id);
+        if (!mongoose.isValidObjectId(id)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid song ID format",
+            });
+        }
 
-        if (songIndex === -1) {
+        const deletedSong = await Song.findByIdAndDelete(id);
+
+        if (!deletedSong) {
             return res.status(404).json({
                 success: false,
                 message: "Song not found",
             });
         }
 
-        const deletedSong = songsDatabase[songIndex];
-        songsDatabase.splice(songIndex, 1);
-
         res.json({
             success: true,
             message: "Song deleted successfully",
-            data: deletedSong,
         });
     } catch (error) {
         console.error("Error deleting song:", error);

@@ -68,7 +68,7 @@ const SongList = ({
         <ListContainer>
             <Grid data-aos="fade-up" data-aos-delay="100">
                 {songs.map((song, index) => (
-                    <SongCard key={song.id} song={song} index={index} />
+                    <SongCard key={song._id} song={song} index={index} />
                 ))}
             </Grid>
         </ListContainer>
