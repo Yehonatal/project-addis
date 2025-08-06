@@ -8,7 +8,7 @@
         "build:webpack": "tsc webpack.config.ts --module ESNext --outDir dist-config",
         "build": "webpack --config dist-config/webpack.config.js --mode production",
         "format": "prettier --write .",
-        "start": "webpack serve --mode development",
+        "start": "webpack serve --config webpack.config.ts --mode development --host 0.0.0.0",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -27,6 +27,7 @@
         "@reduxjs/toolkit": "^2.8.2",
         "aos": "^2.3.4",
         "axios": "^1.10.0",
+        "lucide-react": "^0.536.0",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "react-redux": "^9.2.0",

@@ -97,6 +97,7 @@ const config = async (env: any, argv: any) => {
             static: {
                 directory: path.join(__dirname, "public"),
             },
+            host: "0.0.0.0",
             port: parseInt(process.env.PORT || "3000"),
             open: true,
             hot: true,

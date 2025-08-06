@@ -1,19 +1,28 @@
+version: "3.9"
+
 services:
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        environment:
+            - NODE_ENV=development
+        command: ["npm", "start"]
+
     backend:
-        build: ./backend
-        container_name: addis-backend
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
         ports:
             - "5000:5000"
+        volumes:
+            - ./backend:/app
+            - /app/node_modules
         environment:
-            NODE_ENV: production
-
-    frontend:
-        build: ./frontend
-        container_name: addis-frontend
-        ports:
-            - "3000:80"
-        environment:
-            NODE_ENV: production
-            API_BASE_URL: http://backend:5000
-        depends_on:
-            - backend
+            - NODE_ENV=development
+        command: ["npm", "run", "dev"]
