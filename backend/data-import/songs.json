@@ -1,0 +1,502 @@
+[
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "album": "Greatest Hits",
+    "year": 1970,
+    "genre": "Hip-Hop",
+    "duration": "6:24",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "album": "Live at Wembley",
+    "year": 1971,
+    "genre": "Pop",
+    "duration": "2:38",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "album": "The Best Of",
+    "year": 1972,
+    "genre": "Alternative",
+    "duration": "3:58",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "album": "Unplugged",
+    "year": 1973,
+    "genre": "R&B",
+    "duration": "5:51",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "album": "Studio Sessions",
+    "year": 1974,
+    "genre": "Hip-Hop",
+    "duration": "4:54",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Sweet Child O' Mine",
+    "artist": "Guns N' Roses",
+    "album": "Greatest Hits",
+    "year": 1975,
+    "genre": "Alternative",
+    "duration": "5:57",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "album": "Live at Wembley",
+    "year": 1976,
+    "genre": "Pop",
+    "duration": "2:03",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "album": "The Best Of",
+    "year": 1977,
+    "genre": "Alternative",
+    "duration": "6:49",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Like a Rolling Stone",
+    "artist": "Bob Dylan",
+    "album": "Unplugged",
+    "year": 1978,
+    "genre": "Hip-Hop",
+    "duration": "6:55",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Let It Be",
+    "artist": "Prince",
+    "album": "Studio Sessions",
+    "year": 1979,
+    "genre": "Pop",
+    "duration": "6:16",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Purple Rain",
+    "artist": "Pink Floyd",
+    "album": "Greatest Hits",
+    "year": 1980,
+    "genre": "Electronic",
+    "duration": "4:26",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Comfortably Numb",
+    "artist": "Bon Jovi",
+    "album": "Live at Wembley",
+    "year": 1981,
+    "genre": "Hip-Hop",
+    "duration": "3:25",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Wish You Were Here",
+    "artist": "The Police",
+    "album": "The Best Of",
+    "year": 1982,
+    "genre": "R&B",
+    "duration": "5:10",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "November Rain",
+    "artist": "Whitney Houston",
+    "album": "Unplugged",
+    "year": 1983,
+    "genre": "R&B",
+    "duration": "3:29",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Livin' on a Prayer",
+    "artist": "Metallica",
+    "album": "Studio Sessions",
+    "year": 1984,
+    "genre": "R&B",
+    "duration": "2:05",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Every Breath You Take",
+    "artist": "AC/DC",
+    "album": "Greatest Hits",
+    "year": 1985,
+    "genre": "Electronic",
+    "duration": "3:11",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "I Will Always Love You",
+    "artist": "R.E.M.",
+    "album": "Live at Wembley",
+    "year": 1986,
+    "genre": "Pop",
+    "duration": "3:10",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Nothing Else Matters",
+    "artist": "U2",
+    "album": "The Best Of",
+    "year": 1987,
+    "genre": "Rock",
+    "duration": "5:30",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Thunderstruck",
+    "artist": "Adele",
+    "album": "Unplugged",
+    "year": 1988,
+    "genre": "Alternative",
+    "duration": "6:41",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Losing My Religion",
+    "artist": "Coldplay",
+    "album": "Studio Sessions",
+    "year": 1989,
+    "genre": "R&B",
+    "duration": "3:19",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "One",
+    "artist": "Radiohead",
+    "album": "Greatest Hits",
+    "year": 1990,
+    "genre": "Hip-Hop",
+    "duration": "3:54",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Yesterday",
+    "artist": "Oasis",
+    "album": "Live at Wembley",
+    "year": 1991,
+    "genre": "Electronic",
+    "duration": "2:15",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Kashmir",
+    "artist": "Linkin Park",
+    "album": "The Best Of",
+    "year": 1992,
+    "genre": "Hip-Hop",
+    "duration": "2:34",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Dream On",
+    "artist": "Journey",
+    "album": "Unplugged",
+    "year": 1993,
+    "genre": "Pop",
+    "duration": "6:55",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Hallelujah",
+    "artist": "Imagine Dragons",
+    "album": "Studio Sessions",
+    "year": 1994,
+    "genre": "Hip-Hop",
+    "duration": "2:49",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Blackbird",
+    "artist": "Bruno Mars",
+    "album": "Greatest Hits",
+    "year": 1995,
+    "genre": "Alternative",
+    "duration": "2:05",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Another Brick in the Wall",
+    "artist": "Ed Sheeran",
+    "album": "Live at Wembley",
+    "year": 1996,
+    "genre": "R&B",
+    "duration": "3:46",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Under Pressure",
+    "artist": "Lady Gaga",
+    "album": "The Best Of",
+    "year": 1997,
+    "genre": "R&B",
+    "duration": "2:33",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "In the End",
+    "artist": "Lil Nas X",
+    "album": "Unplugged",
+    "year": 1998,
+    "genre": "Pop",
+    "duration": "3:17",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Zombie",
+    "artist": "The Weeknd",
+    "album": "Studio Sessions",
+    "year": 1999,
+    "genre": "Alternative",
+    "duration": "4:37",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Creep",
+    "artist": "Hozier",
+    "album": "Greatest Hits",
+    "year": 2000,
+    "genre": "Pop",
+    "duration": "6:44",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Wonderwall",
+    "artist": "OneRepublic",
+    "album": "Live at Wembley",
+    "year": 2001,
+    "genre": "Rock",
+    "duration": "4:10",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Numb",
+    "artist": "Shawn Mendes",
+    "album": "The Best Of",
+    "year": 2002,
+    "genre": "R&B",
+    "duration": "4:54",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Back in Black",
+    "artist": "Dua Lipa",
+    "album": "Unplugged",
+    "year": 2003,
+    "genre": "Rock",
+    "duration": "6:30",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Crazy Train",
+    "artist": "Queen",
+    "album": "Studio Sessions",
+    "year": 2004,
+    "genre": "Alternative",
+    "duration": "2:48",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Enter Sandman",
+    "artist": "Eagles",
+    "album": "Greatest Hits",
+    "year": 2005,
+    "genre": "Electronic",
+    "duration": "3:30",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Come As You Are",
+    "artist": "Led Zeppelin",
+    "album": "Live at Wembley",
+    "year": 2006,
+    "genre": "Alternative",
+    "duration": "3:12",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Don't Stop Believin'",
+    "artist": "John Lennon",
+    "album": "The Best Of",
+    "year": 2007,
+    "genre": "R&B",
+    "duration": "2:41",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Imagine Dragons - Believer",
+    "artist": "Nirvana",
+    "album": "Unplugged",
+    "year": 2008,
+    "genre": "Rock",
+    "duration": "6:41",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Guns N' Roses",
+    "album": "Studio Sessions",
+    "year": 2009,
+    "genre": "Electronic",
+    "duration": "5:02",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Shape of You",
+    "artist": "The Beatles",
+    "album": "Greatest Hits",
+    "year": 2010,
+    "genre": "R&B",
+    "duration": "5:07",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Rolling in the Deep",
+    "artist": "Michael Jackson",
+    "album": "Live at Wembley",
+    "year": 2011,
+    "genre": "Rock",
+    "duration": "3:11",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Someone Like You",
+    "artist": "Bob Dylan",
+    "album": "The Best Of",
+    "year": 2012,
+    "genre": "R&B",
+    "duration": "5:07",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Shallow",
+    "artist": "Prince",
+    "album": "Unplugged",
+    "year": 2013,
+    "genre": "Electronic",
+    "duration": "2:19",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Old Town Road",
+    "artist": "Pink Floyd",
+    "album": "Studio Sessions",
+    "year": 2014,
+    "genre": "Pop",
+    "duration": "2:34",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Blinding Lights",
+    "artist": "Bon Jovi",
+    "album": "Greatest Hits",
+    "year": 2015,
+    "genre": "Rock",
+    "duration": "2:52",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Take Me to Church",
+    "artist": "The Police",
+    "album": "Live at Wembley",
+    "year": 2016,
+    "genre": "Pop",
+    "duration": "3:08",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Counting Stars",
+    "artist": "Whitney Houston",
+    "album": "The Best Of",
+    "year": 2017,
+    "genre": "Electronic",
+    "duration": "3:08",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Senorita",
+    "artist": "Metallica",
+    "album": "Unplugged",
+    "year": 2018,
+    "genre": "R&B",
+    "duration": "3:07",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  },
+  {
+    "title": "Levitating",
+    "artist": "AC/DC",
+    "album": "Studio Sessions",
+    "year": 2019,
+    "genre": "Rock",
+    "duration": "5:17",
+    "createdAt": "2025-08-01T06:12:09.827557Z",
+    "updatedAt": "2025-08-01T06:12:09.827557Z"
+  }
+]

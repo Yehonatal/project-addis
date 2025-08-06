@@ -31,7 +31,7 @@ const DeleteConfirmModal = () => {
 
     const handleConfirm = () => {
         if (currentSong) {
-            dispatch(deleteSongRequest(currentSong.id));
+            dispatch(deleteSongRequest(currentSong._id));
             handleClose();
         }
     };

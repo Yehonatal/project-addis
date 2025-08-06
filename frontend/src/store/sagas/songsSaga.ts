@@ -114,7 +114,6 @@ function* updateSongSaga(
         yield put(updateSongSuccess(response.data));
         yield put(closeEditModal());
         yield delay(50);
-        console.log("🔔 Dispatching update song notification...");
         yield put(
             addNotification({
                 type: "success",
@@ -144,7 +143,6 @@ function* deleteSongSaga(
         yield put(deleteSongSuccess(response.data));
         yield put(setCurrentPage(1));
         yield delay(50);
-        console.log("🔔 Dispatching delete song notification...");
         yield put(
             addNotification({
                 type: "success",

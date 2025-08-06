@@ -1,5 +1,5 @@
 export interface ISong {
-    id: string;
+    _id: string;
     title: string;
     artist: string;
     album: string;
@@ -26,4 +26,16 @@ export interface UpdateSongRequest {
     year?: number;
     genre?: string;
     duration?: string;
+}
+
+declare global {
+    namespace Express {
+        interface Request {
+            user?: {
+                _id: string;
+                username?: string;
+                email?: string;
+            };
+        }
+    }
 }

@@ -2,7 +2,7 @@ import { ISong } from "../types/types";
 import { v4 as uuidv4 } from "uuid";
 
 export class Song implements ISong {
-    id: string;
+    _id: string;
     title: string;
     artist: string;
     album: string;
@@ -19,8 +19,8 @@ export class Song implements ISong {
         year,
         genre,
         duration,
-    }: Omit<ISong, "id" | "createdAt" | "updatedAt">) {
-        this.id = uuidv4();
+    }: Omit<ISong, "_id" | "createdAt" | "updatedAt">) {
+        this._id = uuidv4();
         this.title = title;
         this.artist = artist;
         this.album = album;
@@ -32,7 +32,7 @@ export class Song implements ISong {
     }
 }
 
-const songsData: Omit<ISong, "id" | "createdAt" | "updatedAt">[] = [
+const songsData: Omit<ISong, "_id" | "createdAt" | "updatedAt">[] = [
     {
         title: "Bohemian Rhapsody",
         artist: "Queen",

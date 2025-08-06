@@ -45,25 +45,25 @@ const MusicManagement = () => {
     };
 
     // Test notification function (for development)
-    const testNotification = () => {
-        const types = ["success", "error", "warning", "info"] as const;
-        const messages = [
-            "This is a success notification!",
-            "This is an error notification!",
-            "This is a warning notification!",
-            "This is an info notification!",
-        ];
-        const randomType = types[Math.floor(Math.random() * types.length)];
-        const randomMessage = messages[types.indexOf(randomType)];
+    // const testNotification = () => {
+    //     const types = ["success", "error", "warning", "info"] as const;
+    //     const messages = [
+    //         "This is a success notification!",
+    //         "This is an error notification!",
+    //         "This is a warning notification!",
+    //         "This is an info notification!",
+    //     ];
+    //     const randomType = types[Math.floor(Math.random() * types.length)];
+    //     const randomMessage = messages[types.indexOf(randomType)];
 
-        dispatch(
-            addNotification({
-                type: randomType,
-                message: randomMessage,
-                duration: 4000,
-            })
-        );
-    };
+    //     dispatch(
+    //         addNotification({
+    //             type: randomType,
+    //             message: randomMessage,
+    //             duration: 4000,
+    //         })
+    //     );
+    // };
 
     if (isLoading && !songs.length) {
         return (
