@@ -48,7 +48,7 @@ const App = () => {
             <Notifications />
 
             <Header data-aos="fade-zoom-in">
-                <Title>Addis Software Internship Test</Title>
+                <Title>Addis Software Internship (v.2)</Title>
                 <SubContainer>
                     <Subtitle>by</Subtitle>
                     <Subtitle>
