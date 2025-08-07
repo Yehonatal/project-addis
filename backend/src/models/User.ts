@@ -2,19 +2,20 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
 interface IUser {
-    username: string;
+    name: string;
     password: string;
     email: string;
 }
 
 interface IUserDocument extends IUser, mongoose.Document {
+    _id: mongoose.Types.ObjectId;
     matchPassword(enteredPassword: string): Promise<boolean>;
 }
 
 interface IUserModel extends mongoose.Model<IUserDocument> {}
 
 const userSchema = new mongoose.Schema<IUserDocument>({
-    username: {
+    name: {
         type: String,
         required: true,
         unique: true,

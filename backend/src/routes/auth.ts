@@ -17,34 +17,34 @@ const router = express.Router();
  */
 router.post("/register", async (req, res, next) => {
     try {
-        const { username, email, password } = req.body;
-        if (!username || !email || !password) {
+        const { name, email, password } = req.body;
+        if (!name || !email || !password) {
             return res.status(400).json({
                 success: false,
-                message: "Missing required fields: username, email, password",
+                message: "Missing required fields: name, email, password",
             });
         }
 
         // Check if user already exists
         const existingUser = await User.findOne({
-            $or: [{ username }, { email }],
+            $or: [{ name }, { email }],
         });
 
         const newUser = await User.create({
-            username: username.trim().toLowerCase().replace(/\s+/g, ""),
+            name: name.trim().toLowerCase().replace(/\s+/g, ""),
             email: email.trim().toLowerCase(),
             password: password.trim(),
         });
 
         // Create Tokens
-        const payload = { userId: newUser._id, username: newUser.username };
+        const payload = { userId: newUser._id.toString(), name: newUser.name };
         const accessToken = await generateToken(payload, "15m");
         const refreshToken = await generateToken(payload, "7d");
 
         // Set refresh token in cookies
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
+            secure: true,
             sameSite: "none",
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
@@ -54,7 +54,7 @@ router.post("/register", async (req, res, next) => {
             message: "User registered successfully",
             user: {
                 _id: newUser._id,
-                username: newUser.username,
+                name: newUser.name,
                 email: newUser.email,
             },
             accessToken,
@@ -108,6 +108,29 @@ router.post("/login", async (req, res, next) => {
                 message: "Invalid email or password",
             });
         }
+
+        const payload = { userId: user._id.toString(), name: user.name };
+        const accessToken = await generateToken(payload, "15m");
+        const refreshToken = await generateToken(payload, "7d");
+
+        // Set refresh token in cookies
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        });
+
+        res.status(200).json({
+            success: true,
+            message: "User logged in successfully",
+            user: {
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+            },
+            accessToken,
+        });
     } catch (error) {
         console.error("Error logging in user:", error);
         res.status(500).json({
@@ -133,8 +156,9 @@ router.post("/logout", async (req, res, next) => {
         // Clear the refresh token cookie
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
-            sameSite: "none",
+            secure: true, // must match the `secure: true` used at set time
+            sameSite: "none", // must match `sameSite: "none"`
+            path: "/", // must match (default path is “/” when you set it explicitly)
         });
 
         res.status(200).json({
@@ -173,7 +197,8 @@ router.post("/refresh", async (req, res, next) => {
 
         // Verify the refresh token
         const { payload } = await jwtVerify(refreshToken, JWT_SECRET);
-        if (!payload || !payload.userId) {
+
+        if (!payload || typeof payload.userId !== "string") {
             return res.status(401).json({
                 success: false,
                 message: "Invalid refresh token",
@@ -190,7 +215,7 @@ router.post("/refresh", async (req, res, next) => {
 
         // Generate a new access token
         const newAccessToken = await generateToken(
-            { userId: user._id, username: user.username },
+            { userId: user._id, name: user.name },
             "15m"
         );
 
@@ -200,10 +225,12 @@ router.post("/refresh", async (req, res, next) => {
             accessToken: newAccessToken,
             user: {
                 _id: user._id,
-                username: user.username,
+                name: user.name,
                 email: user.email,
             },
         });
+
+        console.log("Token refreshed successfully");
     } catch (error) {
         console.error("Error refreshing token:", error);
         res.status(500).json({

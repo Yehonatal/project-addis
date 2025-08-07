@@ -32,6 +32,7 @@ import { AxiosResponse } from "axios";
 import { ISong } from "@app-types/song";
 
 function* fetchSongsSaga(): SagaIterator {
+    console.log("🎯 Fetching songs from Saga");
     try {
         const state = yield select((state: any) => state.songs);
 
@@ -80,7 +81,6 @@ function* createSongSaga(
         yield put(createSongSuccess(response.data));
         yield put(closeCreateModal());
         yield delay(50);
-        console.log("🔔 Dispatching create song notification...");
         yield put(
             addNotification({
                 type: "success",

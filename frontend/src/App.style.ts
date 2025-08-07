@@ -64,3 +64,66 @@ export const Fun = styled.p`
     font-weight: 800;
     color: ${props => props.theme.colors.text};
 `;
+
+export const AuthButton = styled.button`
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem; /* px-2 py-1 */
+    font-size: 0.875rem; /* text-sm */
+    color: white;
+    border: 2px dashed #047857; /* border-green-700 */
+    border-radius: 0.5rem; /* rounded-lg */
+    background-color: #22c55e; /* bg-green-500 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* shadow-md */
+
+    transition:
+        all 0.3s ease,
+        transform 0.1s ease;
+
+    &:hover {
+        background-color: #4ade80; /* hover:bg-green-400 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* hover:shadow-lg */
+    }
+
+    &:active {
+        background-color: #16a34a; /* active:bg-green-600 */
+        transform: scale(0.95); /* active:scale-95 */
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #86efac; /* focus:ring-2 focus:ring-green-300 */
+    }
+`;
+
+export const ProfileCircle = styled.div`
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.25rem 0.65rem; /* px-2 py-1 */
+    font-size: 0.875rem; /* text-sm */
+    color: white;
+    border: 2px dashed #047857; /* border-green-700 */
+    border-radius: 100%; /* rounded-lg */
+    background-color: #22c55e; /* bg-green-500 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* shadow-md */
+    text-decoration: none
+
+    transition:
+        all 0.3s ease,
+        transform 0.1s ease;
+
+    &:hover {
+        background-color: #4ade80; /* hover:bg-green-400 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* hover:shadow-lg */
+    }
+
+    &:active {
+        background-color: #16a34a; /* active:bg-green-600 */
+        transform: scale(0.95); /* active:scale-95 */
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #86efac; /* focus:ring-2 focus:ring-green-300 */
+    }
+`;

@@ -23,7 +23,7 @@ const Header = styled.div`
         gap: 1rem;
         margin-bottom: 1.25rem;
     }
-    
+
     @media (max-width: 480px) {
         margin-bottom: 1rem;
     }
@@ -35,7 +35,7 @@ const HeaderLeft = styled.div`
     gap: 1rem;
     flex: 1;
     min-width: 0;
-    
+
     @media (max-width: 480px) {
         gap: 0.75rem;
     }
@@ -52,7 +52,7 @@ const AddButton = styled.button`
     color: ${props => props.theme.colors.white};
     border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -84,7 +84,7 @@ const ContentArea = styled.div`
     transition: background-color 0.3s ease;
     margin-bottom: 2rem;
     width: 100%;
-    
+
     @media (max-width: 768px) {
         border-radius: 8px;
     }

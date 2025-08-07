@@ -1,12 +1,15 @@
-FROM node:20-alpine
+FROM node:20
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+COPY pnpm-lock.yaml package.json ./
+
+RUN pnpm install
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["npm", "run", "dev"]
+CMD ["pnpm", "dev"]

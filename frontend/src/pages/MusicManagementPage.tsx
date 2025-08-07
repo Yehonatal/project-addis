@@ -7,7 +7,7 @@ import {
     AddButton,
     ContentArea,
     StatsBar,
-} from "./MusicManagement.style";
+} from "./MusicManagementPage.style";
 import SearchBar from "@components/SearchBar";
 import SortControls from "@components/SortControls";
 import ThemeSwitcher from "@components/ThemeSwitcher";

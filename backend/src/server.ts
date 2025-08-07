@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDb from "./config/db";
 import songsRoutes from "./routes/songs";
 import authRoutes from "./routes/auth";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -34,6 +35,7 @@ app.use(
 app.use(morgan("combined"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 // Connect to MongoDB
 connectDb();
 

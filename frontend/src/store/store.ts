@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import rootSaga from "./sagas/rootSaga";
 import songsReducer from "./slices/songsSlice";
 import uiReducer from "./slices/uiSlice";
+import authReducer from "./slices/authSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -10,6 +11,7 @@ export const store = configureStore({
     reducer: {
         songs: songsReducer,
         ui: uiReducer,
+        auth: authReducer,
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

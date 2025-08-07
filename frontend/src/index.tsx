@@ -6,6 +6,7 @@ import "./styles/global.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import ThemeProvider from "./components/ThemeProvider";
+import { BrowserRouter } from "react-router-dom";
 
 AOS.init({
     duration: 800,
@@ -23,10 +24,12 @@ const root = createRoot(container);
 
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </Provider>
+        <BrowserRouter>
+            <Provider store={store}>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </Provider>
+        </BrowserRouter>
     </React.StrictMode>
 );

@@ -1,34 +1,5 @@
-import axios from "axios";
+import api from "@/libs/axios";
 import { ISong } from "@/types/song";
-
-// Get API URL from environment variables with type safety
-declare const process: {
-    env: {
-        REACT_APP_API_URL?: string;
-    };
-};
-
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
-
-const api = axios.create({
-    baseURL: API_URL,
-    timeout: 10000,
-    withCredentials: true,
-    headers: {
-        "Content-Type": "application/json",
-    },
-});
-
-// Basic error handling
-api.interceptors.response.use(
-    response => response,
-    error => {
-        if (error.response?.status === 500) {
-            console.error("Server error:", error.response.data);
-        }
-        return Promise.reject(error);
-    }
-);
 
 // Songs API functions
 export const fetchSongs = async () => {
@@ -55,5 +26,3 @@ export const healthCheck = async () => {
     const response = await api.get("/health");
     return response;
 };
-
-export default api;
